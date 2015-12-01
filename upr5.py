@@ -1,7 +1,7 @@
 ru_en=dict()
-in_f=open('input.txt')
-out_f=open('output.txt','w')
-s=in_f.readline().rstrip()
+sl=open('input.txt')
+slt=open('output.txt','w')
+s=sl.readline().rstrip()
 while len(s)>0:
     en,ru=list(s.split('\t-\t'))
     if ',' in ru:
@@ -17,8 +17,8 @@ while len(s)>0:
         else:
             ru_en[ru]=en
 
-    s=in_f.readline().rstrip()
+    s=sl.readline().rstrip()
 
 key_sort=sorted(ru_en.keys())
 for i in key_sort:
-    print('\t-\t'.join( (i,ru_en[i]) ),file=out_f)
+    print('\t-\t'.join( (i,ru_en[i]) ),file=slt)
